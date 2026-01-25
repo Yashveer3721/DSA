@@ -1,13 +1,15 @@
 class Solution {
 public:
     string shortestPalindrome(string s) {
+
+        //finding the min no.of characters to make palindrome
         string rev=s;
         reverse(rev.begin(),rev.end());
-        long long size=s.size();
+        int size=s.size();
         string combine =s+"$"+rev;
-        long long n=combine.size();
-        vector<long long>lps(n,0);
-        long long pre=0,suf=1;
+        int n=combine.size();
+        vector<int>lps(n,0);
+        int pre=0,suf=1;
         while(suf<n)
         {
             if(combine[pre]==combine[suf])
@@ -28,9 +30,9 @@ public:
                 }
             }
         }
-        long long m=size-lps[n-1];
+        int m=size-lps[n-1];
         string trans;
-        for(long long i=size-1;i>=size-m;i--)
+        for(int i=size-1;i>=size-m;i--)
         {
             trans.push_back(s[i]);
         }
