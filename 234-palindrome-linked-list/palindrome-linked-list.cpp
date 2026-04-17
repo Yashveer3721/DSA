@@ -56,7 +56,7 @@ public:
             curr=future;
         }
         ListNode*temp=head;
-        while(pre)
+        while(pre && temp)
         {
             if(temp->val==pre->val)
             {
