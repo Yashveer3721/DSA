@@ -47,9 +47,7 @@ public:
             slow=slow->next;
             fast=fast->next->next;
         }
-        if(fast!=NULL)
-        {
-        ListNode*pre=NULL,*curr=slow->next,*future;
+        ListNode*pre=NULL,*curr=slow,*future;
         while(curr)
         {
             future=curr->next;
@@ -69,29 +67,5 @@ public:
             return 0;
         }
         return 1;
-        }
-        else
-        {
-             ListNode*pre=NULL,*curr=slow,*future;
-        while(curr)
-        {
-            future=curr->next;
-            curr->next=pre;
-            pre=curr;
-            curr=future;
-        }
-        ListNode*temp=head;
-        while(pre)
-        {
-            if(temp->val==pre->val)
-            {
-                temp=temp->next;
-                pre=pre->next;
-            }
-            else
-            return 0;
-        }
-        return 1;
-        }
     }
 };
